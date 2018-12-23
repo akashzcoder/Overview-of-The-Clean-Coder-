@@ -58,7 +58,7 @@
 \usepackage[utf8]{inputenc}
 
 
-\title{Overview of The Clean Coder}
+\title{\Large \textbf{The Clean Coder}}
 \author{Akash Singh}
 \affil{School of Computer Science, McGill University, Montreal, Canada}
 \setcounter{MaxMatrixCols}{10}
@@ -67,7 +67,7 @@
 \begin{document}
 \maketitle
 % inline
-{\Large \textbf{Clean Code}\par}
+% {\Large \textbf{Clean Code}\par}
 
 
 Have you ever been disrupted by bad code? If you are a programmer with any level of experience, you would have come across such situations. There is a name for it: \textit{wading}. Obviously, a working mess is better than nothing. Have you ever thought of this, "I will fix it later." :) [I am already feeling guilty!]
@@ -111,7 +111,7 @@ We can follow some simple rules for creating good names:
     
     \item \textbf{Avoid Encodings: }
     \begin{itemize}
-        \item Member prefixes is not needed in most of the current tech-stack. For ex: if there is a member variable in java, there is no need to prefix that variable with \textit{m_}.
+        \item Member prefixes is not needed in most of the current tech-stack. For ex: if there is a member variable in java, there is no need to prefix that variable with "\textit{$m\_$}".
         \item There is no need to start an interface name with the letter \textit{I}.
         \item Avoid mental mapping, a very common example is the use of variable i, j, k for nested loops where we know the purpose of each variable but we don't put in the right effort to create a variable name accordingly. This is a must.
 
@@ -120,10 +120,36 @@ We can follow some simple rules for creating good names:
     
     \item \textbf{Method names: }Methods should have verb or verb phrase names like postPayment, deletePage, or save. Accessors, mutators, and predicates should be named for their value and prefixed with get, set, etc.    
     \item \textbf{Don't be cute: }Cuteness in code often appears in the form of jargon or slang. For example, don’t use the name whack() to mean kill() or eatMyShorts() to mean abort().
-    \item \textbf{Pick one word per concept: }For instance, it’s confusing to have \textif{fetch, retrieve, and get} as equivalent methods of different classes. Likewise, it’s confusing to have a \textit{controller and a manager and a driver} in the same code base.
+    \item \textbf{Pick one word per concept: }For instance, it’s confusing to have \textit{fetch, retrieve, and get} as equivalent methods of different classes. Likewise, it’s confusing to have a \textit{controller and a manager and a driver} in the same code base.
     
     \item \textbf{Distinguish when to use a solution based name and when to use a problem specific name: }Remember that the people who read your code will be programmers. So go ahead and use computer science (CS) terms, algorithm names, pattern names, math terms, and so forth. There are lots of very technical things that programmers have to do. Choosing technical names for those things is usually the most appropriate course. Separating solution and problem domain concepts is part of the job of a good programmer and designer. The code that has more to do with problem domain concepts should have names drawn from the problem domain.
 \end{enumerate}
 
+{\Large \textbf{Comments}\par}
+Comments do not make up for bad code as is rightly said by Brian W. Kernighan, "Don't comment bad code, rewrite it!"
 
+\textbf{Types of good comments:}
+\begin{enumerate}
+    \item \textbf{Legal Comments:} These are very important for producing opensource complaint code. For example, \newline
+    // Copyright (C) 2003,2004,2005 by Object Mentor, Inc. All rights reserved.\newline
+    // Released under the terms of the GNU General Public License version 2 or later.
+    \item \textbf{Informative comments: }Mostly written to explain the purpose of a component in a code
+    \item \textbf{Explanation of intent: }Needed when multiple cases are implemented for solving the same problem. This should clarify the reason of choosing one over the other.
+    \item \textbf{Clarification: }To clarify the meaning of some obscure argument for example writing a liner about an imported method when used inside the code.
+    \item \textbf{Warning of Consequences: }Example: @Ignore("Takes too long to run") in case of JUnit, likewise can be framed for other programming languages as well.
+    \item \textbf{Todo comments: }This should have any future possible enhancements or extension. Its worth keeping a note of these as TODO comments for each method.
+    \item \textbf{Amplification: }If something is really important than it looks, it needs a separate mention. For instance, a trim method might just be complementary to data processing. But, in cases where its mandatory, this needs a separate mention to enhance its importance.
+\end{enumerate}
+
+Now let's see some bad comments:
+\begin{enumerate}
+    \item \textbf{Mumbling: }This is writing when you feel like writing it, not when its needed.
+    \item \textbf{Redundant Comments: }Put the comments in the right place and avoid unnecessary redundancy.
+    
+    \item \textbf{Misleading Comments: }It is just plain silly to have a rule that says that every function or variable must have a comment. Comments like this just clutter up the code, propagate lies, and lend to general confusion and disorganization.
+    \item \textbf{Noise Comments: } Don't state the obvious. For instance, there is not point mentioning about the default constructor when its obvious. Or, there is no point to write a comment for a variable when the name itself explains the same.
+    \item \textbf{Braces based comments: }Your indentation should explain this and there is no need for additional comments for the same reason.
+    \item \textbf{Commenting out code: }There is no point in commenting out the code for future use when you are living in the era of version control systems.
+    \item Finally, \textbf{avoid too much information}.
+\end{enumerate}
 \end{document}
